@@ -1,0 +1,9 @@
+type Feed {
+  _id: String!
+  name: String!
+}
+
+type Query {
+  hi: String
+  feeds: [Feed]
+}
