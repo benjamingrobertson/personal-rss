@@ -44,7 +44,9 @@ export default class RegisterForm extends Component {
             id="password"
           />
         </div>
-        <button type="submit">Register User</button>
+        <button className="button" type="submit">
+          Register User
+        </button>
       </form>
     );
   }

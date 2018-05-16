@@ -13,7 +13,7 @@ export default class UserForm extends Component {
     if (user._id) {
       return (
         <button
-          className="logout"
+          className="logout button"
           onClick={() => {
             Meteor.logout();
             client.resetStore();

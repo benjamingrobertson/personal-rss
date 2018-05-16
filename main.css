@@ -1,0 +1,101 @@
+html {
+  font-family: -apple-system, system-ui, SegoeUI, Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  line-height: 1.4;
+  font-size: 18px;
+  background-color: #fffff8;
+  color: #000000;
+}
+
+body {
+  font-size: calc(0.8em + 1vw);
+  line-height: calc(1.4em + 1vh);
+  margin: 7.5vmin;
+  max-width: 70ch;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 1em;
+  margin-bottom: .5em;
+  line-height: 1.2;
+  font-weight: 900;
+}
+
+.grid {
+  display: grid;
+  grid-gap: 1em;
+  margin-bottom: 3em;
+}
+
+.grid h3 {
+  margin-top: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+
+
+
+
+.flex-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 0;
+  padding: 0;
+}
+
+.flex-items--reordered :nth-child(2) {
+  order: -1;
+}
+
+
+
+
+.button {
+  -webkit-appearance: none;
+  font-size: 1em;
+  padding: 0.5em;
+  margin: 1em 0;
+  background-color: #7F00FF;
+  display: inline-block;
+  line-height: 1;
+  color: #fff;
+  border: 0;
+  box-shadow: 0 0 10px 0 #00CED1;
+  transition: 200ms box-shadow;
+  cursor: pointer;
+}
+
+.button:hover,
+.button:focus {
+  outline: 0;
+  box-shadow: 0 0 20px 0 #00CED1;
+}
+
+.button--link {
+  font-size: 100%;
+  background: transparent;
+  border: 0;
+  text-decoration: underline;
+  color: blue;
+}
+
+
+input {
+  font-size: 1em;
+  border: 1px solid grey;
+}
+
+label + input {
+  margin-left: 0.5em;
+}
