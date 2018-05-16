@@ -5,6 +5,8 @@ import { withApollo } from 'react-apollo';
 
 import UserForm from './users/UserForm';
 import Greeting from './greeting/Greeting';
+import AddFeedForm from './feeds/AddFeedForm';
+import FeedsView from './feeds/FeedsView';
 
 const App = ({ loading, client, user }) => {
   if (loading) return null;
@@ -15,6 +17,9 @@ const App = ({ loading, client, user }) => {
         <Greeting />, {user.name || `world`}.
       </p>
       <UserForm user={user} client={client} />
+
+      {user._id && <AddFeedForm />}
+      {user._id && <FeedsView />}
     </>
   );
 };

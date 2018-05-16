@@ -1,9 +1,15 @@
 type Feed {
   _id: String!
-  name: String!
+  url: String!
+  name: String
+  description: String
 }
 
 type Query {
   hi: String
   feeds: [Feed]
+}
+
+type Mutation {
+  createFeed(url: String!, name: String,  description: String): Feed
 }

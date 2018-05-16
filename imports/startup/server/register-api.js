@@ -7,13 +7,10 @@ import FeedsResolvers from '../../api/feeds/resolvers';
 import UsersSchema from '../../api/users/User.graphql';
 import UsersResolvers from '../../api/users/resolvers';
 
-// test
+// testtest
 const typeDefs = [FeedsSchema, UsersSchema];
 
 const resolvers = merge(FeedsResolvers, UsersResolvers);
-// const typeDefs = [GoalsSchema, UsersSchema, ResolutionsSchema];
-
-// const resolvers = merge(GoalsResolvers, ResolutionsResolvers, UsersResolvers);
 
 const schema = makeExecutableSchema({
   typeDefs,
