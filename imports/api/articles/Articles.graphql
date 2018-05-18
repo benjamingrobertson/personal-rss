@@ -8,6 +8,11 @@ type Article {
   link: String
 }
 
-extend type Mutation {
-  createArticle(title: String, description: String, content: String, link: String, author: String, date: String): Article
+extend type Query {
+  article(_id: String!): Article
+  articles: [Article]
+}
+
+type Mutation {
+  createArticle(url: String!): Article
 }

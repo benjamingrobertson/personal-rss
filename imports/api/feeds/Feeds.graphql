@@ -10,6 +10,7 @@ type Query {
   feeds: [Feed]
 }
 
-type Mutation {
+extend type Mutation {
   createFeed(url: String!, name: String,  description: String): Feed
+  createArticles(url: String!): [Article]
 }
