@@ -10,5 +10,9 @@ const CREATE_ARTICLES = gql`
 `;
 
 const CreateArticles = () => {
-  return <Mutation mutation={CREATE_ARTICLES} />;
-};
+  return (
+    <Mutation mutation={CREATE_ARTICLES}>
+      {(createArticles, { data })}
+    </Mutation>
+  )
+}
