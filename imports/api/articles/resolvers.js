@@ -1,5 +1,7 @@
 import Articles from './articles';
 
+// Articles.rawCollection().drop();
+
 export default {
   Query: {
     articles(obj, args, { userId }) {

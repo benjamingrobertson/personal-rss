@@ -58,20 +58,38 @@ export default {
         feedInfo.then(({ items }) => {
           let articles = [];
           items.forEach(
-            ({ title, link, author, pubDate, content, contentSnippet }) => {
+            ({
+              title,
+              link,
+              author,
+              pubDate,
+              content,
+              contentSnippet,
+              ...other
+            }) => {
               article = {
                 title,
                 link,
                 author,
                 date: pubDate,
-                description: contentSnippet
+                description: contentSnippet,
+                content
               };
 
               articles.push(article);
             }
           );
-          console.log(articles);
-          return Articles.insert(articles);
+
+          let ids = [];
+
+          articles.forEach((article) => {
+            console.log(article);
+            let result = Articles.insert({ ...article, userId });
+            ids.push(result);
+            return result;
+          });
+
+          return ids;
         });
       } else {
         throw new Error('Unauthorized');

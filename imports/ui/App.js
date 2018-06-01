@@ -5,8 +5,10 @@ import { withApollo } from 'react-apollo';
 
 import UserForm from './users/UserForm';
 import Greeting from './greeting/Greeting';
-import AddFeedForm from './feeds/AddFeedForm';
-import FeedsView from './feeds/FeedsView';
+// import AddFeedForm from './feeds/AddFeedForm';
+import ArticlesView from './articles/ArticlesView';
+
+import CreateArticles from './feeds/CreateArticles';
 
 const App = ({ loading, client, user }) => {
   if (loading) return null;
@@ -18,17 +20,17 @@ const App = ({ loading, client, user }) => {
       </p>
       <UserForm user={user} client={client} />
 
-      {user._id && <AddFeedForm />}
-      {user._id && <FeedsView />}
+      {user._id && <CreateArticles user={user} client={client} />}
+      {user._id && <ArticlesView user={user} client={client} />}
     </>
   );
 };
 
-const feedsQuery = gql`
-  query Feeds {
-    feeds {
+const articlesQuery = gql`
+  query Articles {
+    articles {
       _id
-      name
+      title
     }
     user {
       _id
@@ -38,6 +40,6 @@ const feedsQuery = gql`
   }
 `;
 
-export default graphql(feedsQuery, {
+export default graphql(articlesQuery, {
   props: ({ data }) => ({ ...data })
 })(withApollo(App));

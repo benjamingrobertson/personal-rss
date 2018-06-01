@@ -1,7 +1,7 @@
 export default {
   Query: {
     user(object, arguments, { user }) {
-      console.log(user);
+      // console.log(user);
       return user || {};
     }
   },
