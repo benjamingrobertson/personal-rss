@@ -13,6 +13,15 @@ export default {
       //return Articles.find().fetch();
 
       return Articles.find({ userId }).fetch();
+    },
+    article(obj, { _id }, { userId }) {
+      if (userId === undefined) {
+        userId = null;
+      }
+
+      const article = Articles.find({ _id }).fetch()[0];
+
+      return { ...article };
     }
   },
 

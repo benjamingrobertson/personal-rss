@@ -9,7 +9,7 @@ import UsersResolvers from '../../api/users/resolvers';
 import ArticlesSchema from '../../api/articles/Articles.graphql';
 import ArticlesResolvers from '../../api/articles/resolvers';
 
-//testttt
+//testtttt
 const typeDefs = [FeedsSchema, UsersSchema, ArticlesSchema];
 
 const resolvers = merge(FeedsResolvers, UsersResolvers, ArticlesResolvers);

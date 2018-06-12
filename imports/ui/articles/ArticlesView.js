@@ -36,13 +36,9 @@ const ArticlesView = ({ user }) => {
                   <h1>
                     <a href={article.link}>{article.title}</a>
                   </h1>
+
                   <p>{article.author}</p>
                   <p>{article.date}</p>
-                  <div
-                    dangerouslySetInnerHTML={{
-                      __html: article.content
-                    }}
-                  />
                 </article>
               ))}
             </ul>

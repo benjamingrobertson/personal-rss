@@ -83,7 +83,7 @@ export default {
           let ids = [];
 
           articles.forEach((article) => {
-            console.log(article);
+            // console.log(article);
             let result = Articles.insert({ ...article, userId });
             ids.push(result);
             return result;
