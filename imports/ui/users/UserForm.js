@@ -8,9 +8,10 @@ export default class UserForm extends Component {
   };
 
   render() {
+    console.log(this.props);
     const { user, client } = this.props;
     const { login } = this.state;
-    if (user._id) {
+    if (user && user._id) {
       return (
         <button
           className="logout button"

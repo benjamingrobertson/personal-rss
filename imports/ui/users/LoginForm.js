@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { Accounts } from 'meteor/accounts-base';
+import { Meteor } from 'meteor/meteor';
 
 export default class LoginForm extends Component {
   login = (e) => {
+    console.log(this.props);
     e.preventDefault();
     Meteor.loginWithPassword(this.email.value, this.password.value, (error) => {
       console.log(error);

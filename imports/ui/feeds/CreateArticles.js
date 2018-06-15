@@ -54,7 +54,7 @@ const CreateArticles = ({ user }) => {
               }}
             />
             <br />
-            <button class="button" type="submit">
+            <button className="button" type="submit">
               Add Feed
             </button>
           </form>
